@@ -89,7 +89,7 @@
 
 </head>
 
-<body class="body">
+<body class="body" style="overflow-x: hidden;">
   <div data-animation="default" data-collapse="small" data-duration="400" data-easing="ease" data-easing2="ease"
     role="banner" class="navbar w-nav">
     <div class="container-3 w-container"><a href="/" aria-current="page" class="brand w-nav-brand w--current">
@@ -170,12 +170,8 @@
   <!-- COPY -->
   <!-- ------------------------------------------------------------------------------------ -->
   <iframe frameborder="0" src="saveweb2zip-com-www-boringmarketing-com/testimonial.html" id="idIframe"
-    onload="iframeLoaded()" height="200vh" width="100%" scrolling="no">
+    onload="iframeLoaded()" height="300vh" width="100%" scrolling="no">
   </iframe>
-
-
-
-
   <!-- ------------------------------------------------------------------------------------------ -->
 
   <div class="page-wrapper">
@@ -353,6 +349,13 @@
         </div>
       </div>
     </div>
+    <!-- COPY -->
+    <!-- ------------------------------------------------------------------------------------ -->
+    <iframe frameborder="0" src="saveweb2zip-com-www-boringmarketing-com/info.html" id="idIframe2"
+      onload="iframeLoaded2()" height="300vh" width="100%" scrolling="no">
+    </iframe>
+    <!-- ------------------------------------------------------------------------------------------ -->
+
     <div class="section">
       <div class="container is--vertical">
         <div class="record-head">
@@ -946,6 +949,39 @@
       }
     }
   </script>
+
+<script type="text/javascript">
+  function iframeLoaded2() {
+    var iFrameID = document.getElementById('idIframe2');
+    if (iFrameID) {
+
+      // iFrameID.height = String(Number(iFrameID.contentWindow.document.body.scrollHeight) + 300) + "px";
+
+
+
+      /* Storing user's device details in a variable*/
+      let details = navigator.userAgent;
+
+      /* Creating a regular expression  
+      containing some mobile devices keywords  
+      to search it in details string*/
+      let regexp = /android|iphone|kindle|ipad/i;
+
+      /* Using test() method to search regexp in details 
+      it returns boolean value*/
+      let isMobileDevice = regexp.test(details);
+
+      if (isMobileDevice) {
+        // here you can make the height, I delete it first, then I make it again
+        iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 600) + "px";
+      } else {
+        // here you can make the height, I delete it first, then I make it again
+        iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 500) + "px";
+      }
+
+    }
+  }
+</script>
 
 
 
