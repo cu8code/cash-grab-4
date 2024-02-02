@@ -914,64 +914,71 @@
 
         // iFrameID.height = String(Number(iFrameID.contentWindow.document.body.scrollHeight) + 300) + "px";
 
+        iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 50) + "px";
 
 
-        /* Storing user's device details in a variable*/
-        let details = navigator.userAgent;
+        if (window.screen.width < 500) {
 
-        /* Creating a regular expression  
-        containing some mobile devices keywords  
-        to search it in details string*/
-        let regexp = /android|iphone|kindle|ipad/i;
-
-        /* Using test() method to search regexp in details 
-        it returns boolean value*/
-        let isMobileDevice = regexp.test(details);
-
-        if (isMobileDevice) {
           // here you can make the height, I delete it first, then I make it again
           iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 600) + "px";
-        } else {
+
+
+        }
+        if (window.screen.width < 1000) {
+
           // here you can make the height, I delete it first, then I make it again
-          iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight)) + "px";
+          iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 100) + "px";
+
+
         }
 
       }
     }
   </script>
 
-<script type="text/javascript">
-  function iframeLoaded2() {
-    var iFrameID = document.getElementById('idIframe2');
-    if (iFrameID) {
-
-      // iFrameID.height = String(Number(iFrameID.contentWindow.document.body.scrollHeight) + 300) + "px";
+  <script type="text/javascript">
+    function iframeLoaded2() {
 
 
+      var iFrameID = document.getElementById('idIframe2');
+      if (iFrameID) {
 
-      /* Storing user's device details in a variable*/
-      let details = navigator.userAgent;
-
-      /* Creating a regular expression  
-      containing some mobile devices keywords  
-      to search it in details string*/
-      let regexp = /android|iphone|kindle|ipad/i;
-
-      /* Using test() method to search regexp in details 
-      it returns boolean value*/
-      let isMobileDevice = regexp.test(details);
-
-      if (isMobileDevice) {
-        // here you can make the height, I delete it first, then I make it again
-        iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 600) + "px";
-      } else {
-        // here you can make the height, I delete it first, then I make it again
         iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 500) + "px";
+
+        if (window.screen.width < 500) {
+          // here you can make the height, I delete it first, then I make it again
+          iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight)) + "px";
+        }
+        if (window.screen.width < 1000) {
+          // here you can make the height, I delete it first, then I make it again
+          iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight)) + "px";
+        }
       }
 
+
+
+      // /* Storing user's device details in a variable*/
+      // let details = navigator.userAgent;
+
+      // /* Creating a regular expression  
+      // containing some mobile devices keywords  
+      // to search it in details string*/
+      // let regexp = /android|iphone|kindle|ipad/i;
+
+      // /* Using test() method to search regexp in details 
+      // it returns boolean value*/
+      // let isMobileDevice = regexp.test(details);
+
+      // if (isMobileDevice) {
+      //   // here you can make the height, I delete it first, then I make it again
+      //   iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 600) + "px";
+      // } else {
+      //   // here you can make the height, I delete it first, then I make it again
+      //   iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 500) + "px";
+      // }
+
     }
-  }
-</script>
+  </script>
 
 
 
