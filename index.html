@@ -423,7 +423,7 @@
     </div>
 
     <iframe frameborder="0" src="saveweb2zip-com-www-boringmarketing-com/info.html" id="idIframe2"
-      onload="resizeIframe(this)" height="300vh" width="100%" scrolling="no">
+      height="300vh" width="100%" scrolling="no">
     </iframe>
 
     <div class="section">
@@ -993,31 +993,40 @@
 
 
   <script type="text/javascript">
+
+    setTimeout(() => {
+      iframeLoaded()
+    }, 3000)
+    setTimeout(() => {
+      iframeLoaded2()
+    }, 10000)
+
     function iframeLoaded() {
       var iFrameID = document.getElementById('idIframe');
+      console.log("load1");
       if (iFrameID) {
 
         // iFrameID.height = String(Number(iFrameID.contentWindow.document.body.scrollHeight) + 300) + "px";
 
-        iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 80) + "px";
+        iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.offsetHeight)) + "px";
 
 
-        if (window.screen.width < 500) {
+        // if (window.screen.width < 500) {
 
-          // here you can make the height, I delete it first, then I make it again
-          iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 350) + "px";
-
-
-        }
-        if (window.screen.width < 1000) {
-
-          // here you can make the height, I delete it first, then I make it again
-          iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 100) + "px";
+        //   // here you can make the height, I delete it first, then I make it again
+        //   iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 350) + "px";
 
 
-        }
+        // }
+        // if (window.screen.width < 1000) {
 
-        iframeLoaded2()
+        //   // here you can make the height, I delete it first, then I make it again
+        //   iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 100) + "px";
+
+
+        // }
+
+        
 
       }
     }
@@ -1026,21 +1035,22 @@
   <script type="text/javascript">
     function iframeLoaded2() {
 
-
+      console.log("load2");
       var iFrameID = document.getElementById('idIframe2');
       if (iFrameID) {
 
-        iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight) + 100) + "px";
+        iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.offsetHeight)) + "px";
 
-        if (window.screen.width < 500) {
-          // here you can make the height, I delete it first, then I make it again
-          iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight)) + "px";
-        }
-        if (window.screen.width < 1000) {
-          // here you can make the height, I delete it first, then I make it again
-          iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight)+ 200) + "px";
-        }
+        // if (window.screen.width < 500) {
+        //   // here you can make the height, I delete it first, then I make it again
+        //   iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight)) + "px";
+        // }
+        // if (window.screen.width < 1000) {
+        //   // here you can make the height, I delete it first, then I make it again
+        //   iFrameID.height = String(parseFloat(iFrameID.contentWindow.document.body.scrollHeight)+ 200) + "px";
+        // }
       }
+
 
 
 
